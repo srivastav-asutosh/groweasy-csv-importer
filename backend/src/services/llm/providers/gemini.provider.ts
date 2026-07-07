@@ -19,7 +19,7 @@ export class GeminiProvider implements LlmProvider {
   async extractBatch(rows: RawCsvRow[], startIndex: number): Promise<RawExtractedRecord[]> {
     try {
       const generativeModel = this.client.getGenerativeModel({
-        model: this.model || "gemini-1.5-flash",
+        model: this.model || "gemini-2.0-flash",
         systemInstruction: SYSTEM_PROMPT,
         generationConfig: {
           temperature: 0,

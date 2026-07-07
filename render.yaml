@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: groweasy-csv-importer-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    plan: free
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: CORS_ORIGIN
+        sync: false # set to your deployed Vercel URL, e.g. https://groweasy-csv-importer.vercel.app
+      - key: LLM_PROVIDER
+        sync: false # openai | gemini | anthropic
+      - key: LLM_MODEL
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: BATCH_SIZE
+        value: 20
+      - key: BATCH_CONCURRENCY
+        value: 3
+      - key: MAX_RETRIES
+        value: 3

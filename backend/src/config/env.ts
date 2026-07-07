@@ -10,7 +10,8 @@ export const env = {
   corsOrigin: process.env.CORS_ORIGIN ?? "http://localhost:3000",
 
   llmProvider: (process.env.LLM_PROVIDER ?? "mock").toLowerCase(),
-  llmModel: process.env.LLM_MODEL ?? "gpt-4o-mini",
+  // Empty means "use the provider's own default model".
+  llmModel: process.env.LLM_MODEL ?? "",
   openaiApiKey: process.env.OPENAI_API_KEY ?? "",
   geminiApiKey: process.env.GEMINI_API_KEY ?? "",
   anthropicApiKey: process.env.ANTHROPIC_API_KEY ?? "",

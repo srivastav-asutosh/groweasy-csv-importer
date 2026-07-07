@@ -19,7 +19,7 @@ export class OpenAiProvider implements LlmProvider {
   async extractBatch(rows: RawCsvRow[], startIndex: number): Promise<RawExtractedRecord[]> {
     try {
       const completion = await this.client.chat.completions.create({
-        model: this.model,
+        model: this.model || "gpt-4o-mini",
         temperature: 0,
         response_format: { type: "json_object" },
         messages: [
