@@ -19,7 +19,9 @@ export class GeminiProvider implements LlmProvider {
   async extractBatch(rows: RawCsvRow[], startIndex: number): Promise<RawExtractedRecord[]> {
     try {
       const generativeModel = this.client.getGenerativeModel({
-        model: this.model || "gemini-2.5-flash",
+        // Alias maintained by Google that always resolves to the newest Flash
+        // release — pinned model names keep getting retired for new API keys.
+        model: this.model || "gemini-flash-latest",
         systemInstruction: SYSTEM_PROMPT,
         generationConfig: {
           temperature: 0,
