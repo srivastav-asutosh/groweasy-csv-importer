@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from "react";
 import { useDropzone, type FileRejection } from "react-dropzone";
-import { UploadCloud, FileWarning } from "lucide-react";
+import { UploadCloud, FileWarning, FileDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface UploadDropzoneProps {
@@ -59,6 +59,20 @@ export function UploadDropzone({ onFileSelected }: UploadDropzoneProps) {
           <FileWarning size={16} /> {rejectionError}
         </p>
       )}
+
+      <p className="mt-4 text-center text-sm text-zinc-500 dark:text-zinc-400">
+        No CSV handy?{" "}
+        <a
+          href="/sample-leads.csv"
+          download
+          onClick={(e) => e.stopPropagation()}
+          className="inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline dark:text-indigo-400"
+        >
+          <FileDown size={14} /> Download a sample file
+        </a>{" "}
+        — it has messy headers, mixed date formats, and a row that should be skipped, so you can
+        see the AI mapping in action.
+      </p>
     </div>
   );
 }
