@@ -4,9 +4,11 @@ An AI-powered CSV importer that maps **any** CSV export — Facebook Lead Ads, G
 
 Built for the GrowEasy Software Developer (Intern / Full-Time) take-home assignment.
 
-- **Live app:** _add your hosted frontend URL here_
-- **Live API:** _add your hosted backend URL here_
-- **Repository:** _add your GitHub URL here_
+- **Live app:** https://groweasy-csv-importer-ivory-two.vercel.app
+- **Live API:** https://groweasy-csv-importer-api-8ud4.onrender.com (health check: [`/api/health`](https://groweasy-csv-importer-api-8ud4.onrender.com/api/health))
+- **Repository:** https://github.com/srivastav-asutosh/groweasy-csv-importer
+
+> **Note:** the API runs on Render's free tier, which spins down after inactivity — the first request may take ~50 seconds while the instance cold-starts.
 
 ---
 
